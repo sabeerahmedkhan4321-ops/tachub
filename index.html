@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alpine Accents | Mountain Adventures</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#07151b;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:75px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 clamp(20px,7vw,100px);
+
+    background:rgba(4,18,24,.82);
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:clamp(20px,2vw,28px);
+    font-weight:800;
+    letter-spacing:2px;
+    white-space:nowrap;
+}
+
+.logo span{
+    color:#65d6a2;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:clamp(15px,3vw,35px);
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#65d6a2;
+}
+
+.menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+
+    padding:
+        130px
+        clamp(20px,7vw,100px)
+        100px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(2,13,18,.96),
+        rgba(2,13,18,.65),
+        rgba(2,13,18,.25)
+    ),
+    linear-gradient(
+        135deg,
+        #416f7e,
+        #173742 55%,
+        #07151b
+    );
+}
+
+.hero-content{
+    width:100%;
+    max-width:750px;
+    position:relative;
+    z-index:5;
+}
+
+.tag{
+    display:inline-block;
+
+    color:#65d6a2;
+
+    border:1px solid rgba(101,214,162,.5);
+
+    padding:7px 15px;
+
+    border-radius:50px;
+
+    font-size:12px;
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(52px,8vw,105px);
+    line-height:.92;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#65d6a2;
+}
+
+.hero p{
+    color:#c7d1d4;
+    max-width:620px;
+
+    font-size:clamp(15px,2vw,18px);
+
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 24px;
+
+    border-radius:6px;
+
+    border:1px solid #65d6a2;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#65d6a2;
+    color:#07151b;
+}
+
+.btn-primary:hover{
+    background:white;
+    border-color:white;
+}
+
+.btn-outline{
+    background:transparent;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#07151b;
+}
+
+
+/* =========================
+   MOUNTAINS
+========================= */
+
+.mountains{
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:300px;
+
+    pointer-events:none;
+}
+
+.mountain{
+    position:absolute;
+    bottom:0;
+
+    width:0;
+    height:0;
+
+    border-left:
+        clamp(100px,18vw,250px)
+        solid transparent;
+
+    border-right:
+        clamp(100px,18vw,250px)
+        solid transparent;
+
+    border-bottom:
+        clamp(160px,25vw,350px)
+        solid #0c242d;
+}
+
+.m1{
+    left:0;
+}
+
+.m2{
+    left:32%;
+
+    border-bottom-color:#091e27;
+}
+
+.m3{
+    right:0;
+
+    border-bottom-color:#102b34;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:
+        clamp(60px,8vw,100px)
+        clamp(20px,7vw,100px);
+}
+
+.section-heading{
+    max-width:700px;
+    margin-bottom:45px;
+}
+
+.section-heading span{
+    color:#65d6a2;
+
+    font-size:12px;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+}
+
+.section-heading h2{
+    font-size:clamp(32px,5vw,50px);
+
+    line-height:1.1;
+
+    margin:10px 0 15px;
+}
+
+.section-heading p{
+    color:#9eafb5;
+    font-size:15px;
+}
+
+
+/* =========================
+   EXPEDITIONS
+========================= */
+
+.expeditions{
+    background:#081a22;
+}
+
+.expedition-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:20px;
+}
+
+.card{
+    background:#0d252e;
+
+    border:1px solid rgba(255,255,255,.07);
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    border-color:#65d6a2;
+}
+
+.card-image{
+    height:clamp(180px,22vw,250px);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:clamp(70px,8vw,105px);
+
+    background:
+    linear-gradient(
+        135deg,
+        #274d5c,
+        #0a1c24
+    );
+}
+
+.card-content{
+    padding:clamp(18px,3vw,25px);
+}
+
+.card-content h3{
+    font-size:22px;
+    margin-bottom:8px;
+}
+
+.card-content p{
+    color:#99abb1;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+.card-info{
+    display:flex;
+    justify-content:space-between;
+
+    color:#65d6a2;
+
+    font-size:12px;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    background:#65d6a2;
+    color:#07151b;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    text-align:center;
+
+    gap:20px;
+}
+
+.stat h3{
+    font-size:clamp(30px,5vw,45px);
+}
+
+.stat p{
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:clamp(35px,7vw,80px);
+
+    align-items:center;
+}
+
+.experience-visual{
+    width:100%;
+    min-height:450px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    radial-gradient(
+        circle at 50% 35%,
+        #477f91,
+        #0b252f 55%,
+        #07151b
+    );
+
+    border-radius:15px;
+
+    font-size:clamp(100px,15vw,180px);
+
+    position:relative;
+}
+
+.badge{
+    position:absolute;
+
+    bottom:25px;
+    left:25px;
+
+    background:#07151b;
+
+    border:1px solid #65d6a2;
+
+    padding:12px 18px;
+
+    border-radius:6px;
+
+    font-size:12px;
+}
+
+.features{
+    list-style:none;
+    margin-top:25px;
+}
+
+.features li{
+    margin:15px 0;
+    color:#b7c5c9;
+}
+
+.features li::before{
+    content:"✓";
+
+    color:#65d6a2;
+
+    margin-right:12px;
+
+    font-weight:bold;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    background:#081a22;
+}
+
+.gallery-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    grid-auto-rows:
+        clamp(150px,20vw,210px);
+
+    gap:12px;
+}
+
+.gallery-item{
+    background:
+    linear-gradient(
+        145deg,
+        #386979,
+        #0b2029
+    );
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:clamp(50px,8vw,90px);
+
+    transition:.3s;
+}
+
+.gallery-item:hover{
+    transform:scale(1.02);
+}
+
+.gallery-item.big{
+    grid-column:span 2;
+    grid-row:span 2;
+}
+
+
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:20px;
+}
+
+.quote{
+    background:#0d252e;
+
+    padding:clamp(20px,4vw,30px);
+
+    border-radius:12px;
+
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.quote p{
+    color:#bdc9cc;
+    margin-bottom:20px;
+    font-size:14px;
+}
+
+.person{
+    color:#65d6a2;
+    font-weight:bold;
+    font-size:14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(5,25,32,.9),
+        rgba(5,25,32,.9)
+    ),
+    linear-gradient(
+        135deg,
+        #42788a,
+        #0c222b
+    );
+}
+
+.cta h2{
+    font-size:clamp(34px,6vw,55px);
+
+    line-height:1.1;
+
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#b5c2c5;
+
+    max-width:600px;
+
+    margin:0 auto 25px;
+
+    font-size:15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:
+        55px
+        clamp(20px,7vw,100px);
+
+    background:#041015;
+}
+
+.footer-content{
+    display:grid;
+
+    grid-template-columns:
+        2fr 1fr 1fr 1fr;
+
+    gap:40px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:#829399;
+    font-size:14px;
+}
+
+.footer-links{
+    list-style:none;
+}
+
+.footer-links li{
+    margin:8px 0;
+}
+
+.copyright{
+    border-top:1px solid #203138;
+
+    margin-top:40px;
+
+    padding-top:20px;
+
+    text-align:center;
+
+    color:#617178;
+
+    font-size:13px;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media(max-width:1000px){
+
+    .navbar{
+        padding:0 30px;
+    }
+
+    .nav-links{
+        gap:20px;
+    }
+
+    .hero{
+        padding-left:30px;
+        padding-right:30px;
+    }
+
+    .expedition-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .expedition-grid .card:last-child{
+        grid-column:1/-1;
+        max-width:500px;
+        width:100%;
+        margin:auto;
+    }
+
+    .experience{
+        gap:35px;
+    }
+
+    .testimonials{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .testimonials .quote:last-child{
+        grid-column:1/-1;
+        max-width:600px;
+        width:100%;
+        margin:auto;
+    }
+
+    .footer-content{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:700px){
+
+    body{
+        font-size:14px;
+    }
+
+
+    /* MOBILE NAV */
+
+    .navbar{
+        height:65px;
+        padding:0 20px;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .nav-links{
+
+        display:none;
+
+        position:absolute;
+
+        top:65px;
+        left:0;
+
+        width:100%;
+
+        padding:20px;
+
+        background:#07151b;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:0;
+
+        border-top:1px solid #203138;
+
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .nav-links li{
+        width:100%;
+    }
+
+    .nav-links a{
+        display:block;
+
+        padding:14px 5px;
+
+        width:100%;
+
+        border-bottom:1px solid rgba(255,255,255,.05);
+    }
+
+
+    /* HERO */
+
+    .hero{
+
+        min-height:100svh;
+
+        padding:
+            110px
+            20px
+            80px;
+
+        align-items:flex-start;
+
+    }
+
+    .hero-content{
+        margin-top:50px;
+    }
+
+    .hero h1{
+        font-size:
+            clamp(48px,15vw,75px);
+    }
+
+    .hero p{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .mountains{
+        height:180px;
+    }
+
+
+    /* SECTIONS */
+
+    section{
+        padding:
+            65px
+            20px;
+    }
+
+    .section-heading{
+        margin-bottom:30px;
+    }
+
+
+    /* EXPEDITIONS */
+
+    .expedition-grid{
+        grid-template-columns:1fr;
+    }
+
+    .expedition-grid .card:last-child{
+        grid-column:auto;
+        max-width:none;
+    }
+
+    .card-image{
+        height:210px;
+    }
+
+
+    /* STATS */
+
+    .stats{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        padding:
+            45px
+            20px;
+    }
+
+    .stat{
+        padding:10px;
+    }
+
+
+    /* EXPERIENCE */
+
+    .experience{
+        grid-template-columns:1fr;
+    }
+
+    .experience-visual{
+        min-height:300px;
+    }
+
+    .badge{
+        left:15px;
+        bottom:15px;
+
+        font-size:10px;
+
+        padding:9px 12px;
+    }
+
+
+    /* GALLERY */
+
+    .gallery-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        grid-auto-rows:150px;
+
+        gap:8px;
+    }
+
+    .gallery-item.big{
+        grid-column:span 2;
+        grid-row:span 1;
+    }
+
+
+    /* TESTIMONIALS */
+
+    .testimonials{
+        grid-template-columns:1fr;
+    }
+
+    .testimonials .quote:last-child{
+        grid-column:auto;
+        max-width:none;
+    }
+
+
+    /* FOOTER */
+
+    .footer-content{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    footer{
+        padding:
+            45px
+            20px;
+    }
+
+}
+
+
+/* ==================================================
+   SMALL PHONES
+================================================== */
+
+@media(max-width:400px){
+
+    .logo{
+        font-size:18px;
+        letter-spacing:1px;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .tag{
+        font-size:10px;
+        letter-spacing:1.5px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-item.big{
+        grid-column:span 1;
+    }
+
+    .gallery-item{
+        min-height:150px;
+    }
+
+    .btn{
+        padding:13px 18px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <a href="#home" class="logo">
+        ALPINE <span>ACCENTS</span>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#expeditions">Expeditions</a>
+        </li>
+
+        <li>
+            <a href="#experience">Experience</a>
+        </li>
+
+        <li>
+            <a href="#gallery">Gallery</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+    <div class="menu" onclick="toggleMenu()">
+        ☰
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <span class="tag">
+            EXPLORE • CLIMB • DISCOVER
+        </span>
+
+        <h1>
+            FIND YOUR
+            <span>SUMMIT.</span>
+        </h1>
+
+        <p>
+            Welcome to Alpine Accents — a mountain adventure
+            experience for climbers, trekkers and explorers
+            who feel at home above the clouds.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#expeditions"
+                class="btn btn-primary">
+                Explore Expeditions
+            </a>
+
+            <a
+                href="#experience"
+                class="btn btn-outline">
+                Our Story
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="mountains">
+
+        <div class="mountain m1"></div>
+
+        <div class="mountain m2"></div>
+
+        <div class="mountain m3"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPEDITIONS
+========================= -->
+
+<section
+    class="expeditions"
+    id="expeditions">
+
+    <div class="section-heading">
+
+        <span>
+            CHOOSE YOUR ADVENTURE
+        </span>
+
+        <h2>
+            Beyond The Ordinary
+        </h2>
+
+        <p>
+            From peaceful alpine trekking to challenging
+            mountain climbing, discover an adventure that
+            takes you beyond the everyday.
+        </p>
+
+    </div>
+
+
+    <div class="expedition-grid">
+
+
+        <div class="card">
+
+            <div class="card-image">
+                🏔️
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    Alpine Trekking
+                </h3>
+
+                <p>
+                    Walk through breathtaking mountain
+                    valleys, forests and high-altitude trails.
+                </p>
+
+                <div class="card-info">
+
+                    <span>
+                        7 DAYS
+                    </span>
+
+                    <span>
+                        BEGINNER
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">
+                🧗
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    Mountain Climbing
+                </h3>
+
+                <p>
+                    Experience the challenge of climbing
+                    rugged peaks with experienced guides.
+                </p>
+
+                <div class="card-info">
+
+                    <span>
+                        10 DAYS
+                    </span>
+
+                    <span>
+                        ADVANCED
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-image">
+                🏕️
+            </div>
+
+            <div class="card-content">
+
+                <h3>
+                    Peak Camping
+                </h3>
+
+                <p>
+                    Spend nights under the stars surrounded
+                    by spectacular mountain landscapes.
+                </p>
+
+                <div class="card-info">
+
+                    <span>
+                        5 DAYS
+                    </span>
+
+                    <span>
+                        INTERMEDIATE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+    <div class="stat">
+        <h3>48+</h3>
+        <p>Mountain Routes</p>
+    </div>
+
+    <div class="stat">
+        <h3>12</h3>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="stat">
+        <h3>2.4K+</h3>
+        <p>Adventurers</p>
+    </div>
+
+    <div class="stat">
+        <h3>18</h3>
+        <p>Major Peaks</p>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section
+    class="experience"
+    id="experience">
+
+
+    <div class="experience-visual">
+
+        🏔️
+
+        <div class="badge">
+            LIFE IS BETTER ABOVE THE CLOUDS
+        </div>
+
+    </div>
+
+
+    <div>
+
+        <div class="section-heading">
+
+            <span>
+                WHY ALPINE ACCENTS?
+            </span>
+
+            <h2>
+                Adventure With Purpose
+            </h2>
+
+            <p>
+                We believe mountain adventures are about
+                more than reaching the top. They are about
+                learning, exploring and creating memories.
+            </p>
+
+        </div>
+
+
+        <ul class="features">
+
+            <li>
+                Experienced mountain guides
+            </li>
+
+            <li>
+                Carefully planned climbing routes
+            </li>
+
+            <li>
+                Responsible mountain travel
+            </li>
+
+            <li>
+                Small groups and personal attention
+            </li>
+
+            <li>
+                Adventures for different skill levels
+            </li>
+
+        </ul>
+
+        <br>
+
+        <button
+            class="btn btn-primary"
+            onclick="learnMore()">
+
+            Discover More
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY
+========================= -->
+
+<section
+    class="gallery"
+    id="gallery">
+
+    <div class="section-heading">
+
+        <span>
+            FROM THE MOUNTAINS
+        </span>
+
+        <h2>
+            Moments Above The Clouds
+        </h2>
+
+        <p>
+            Every climb has a story.
+            Every summit creates a memory.
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item big">
+            🏔️
+        </div>
+
+        <div class="gallery-item">
+            🧗
+        </div>
+
+        <div class="gallery-item">
+            🌲
+        </div>
+
+        <div class="gallery-item">
+            🏕️
+        </div>
+
+        <div class="gallery-item">
+            ❄️
+        </div>
+
+        <div class="gallery-item big">
+            🌄
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TESTIMONIALS
+========================= -->
+
+<section>
+
+    <div class="section-heading">
+
+        <span>
+            ADVENTURE STORIES
+        </span>
+
+        <h2>
+            From Our Climbers
+        </h2>
+
+    </div>
+
+
+    <div class="testimonials">
+
+
+        <div class="quote">
+
+            <p>
+                "The mountain climbing experience was
+                unforgettable. The scenery and challenge
+                made it an incredible journey."
+            </p>
+
+            <div class="person">
+                — Hamza, Islamabad
+            </div>
+
+        </div>
+
+
+        <div class="quote">
+
+            <p>
+                "I had never done high-altitude trekking
+                before. The journey gave me a completely
+                new appreciation for the mountains."
+            </p>
+
+            <div class="person">
+                — Ayesha, Lahore
+            </div>
+
+        </div>
+
+
+        <div class="quote">
+
+            <p>
+                "From the first trail to the final summit,
+                every moment felt like an adventure."
+            </p>
+
+            <div class="person">
+                — Ali, Karachi
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section
+    class="cta"
+    id="contact">
+
+    <h2>
+        Your Next Adventure Awaits.
+    </h2>
+
+    <p>
+        Pack your gear, gather your courage and start
+        planning your next mountain experience.
+    </p>
+
+    <button
+        class="btn btn-primary"
+        onclick="startAdventure()">
+
+        Start Your Adventure
+
+    </button>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+
+        <div>
+
+            <div class="logo">
+                ALPINE <span>ACCENTS</span>
+            </div>
+
+            <br>
+
+            <p>
+                Mountain adventures, climbing experiences
+                and unforgettable journeys.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Explore
+            </h3>
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="#expeditions">
+                        Expeditions
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#experience">
+                        About
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Adventure
+            </h3>
+
+            <ul class="footer-links">
+
+                <li>Mountain Climbing</li>
+                <li>Alpine Trekking</li>
+                <li>Camping</li>
+                <li>Peak Expeditions</li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📧 hello@alpineaccents.com
+            </p>
+
+            <p>
+                📞 +92 300 1234567
+            </p>
+
+            <p>
+                📍 Pakistan
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Alpine Accents.
+        Crafted for mountain lovers.
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+function toggleMenu(){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    nav.classList.toggle("active");
+
+}
+
+
+/* =========================
+   CLOSE MOBILE MENU
+========================= */
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+
+/* =========================
+   LEARN MORE
+========================= */
+
+function learnMore(){
+
+    alert(
+        "Alpine Accents is focused on mountain " +
+        "exploration, responsible adventure and " +
+        "memorable climbing experiences."
+    );
+
+}
+
+
+/* =========================
+   START ADVENTURE
+========================= */
+
+function startAdventure(){
+
+    alert(
+        "Adventure request received! 🏔️\n\n" +
+        "We will help you plan your next mountain journey."
+    );
+
+}
+
+
+/* =========================
+   CLOSE MENU WHEN CLICKING
+   OUTSIDE
+========================= */
+
+document.addEventListener("click", function(event){
+
+    const nav =
+        document.getElementById("navLinks");
+
+    const menu =
+        document.querySelector(".menu");
+
+    if(
+        nav.classList.contains("active") &&
+        !nav.contains(event.target) &&
+        !menu.contains(event.target)
+    ){
+
+        nav.classList.remove("active");
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
